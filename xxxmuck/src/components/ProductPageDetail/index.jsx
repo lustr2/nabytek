@@ -1,8 +1,7 @@
-import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 
-export const ProductPageDetail = () => {
-    const { id } = useParams();
+export const ProductPageDetail = ( {id}) => {
+//    const { id } = useParams();
     const [vyrobek, setVyrobek] = useState(null);
 
     useEffect (() => {
@@ -18,11 +17,9 @@ export const ProductPageDetail = () => {
         };
 
         oneProduct();
-    },[]);
+    },[id]);
 
-    if (vyrobek === null) return;
-
-    return(
+        return(
         <>
             {vyrobek===null ? <div>Nacitam produkt ....</div>: 
             <div>
