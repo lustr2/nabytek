@@ -1,34 +1,28 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { ProductPageDetail } from "../ProductPageDetail";
 
-export const ProductPage = ( { idP, obr, nazev} ) => {
-    const { id } = useParams();
+export const ProductPage = ( { idP, obr, nazev, onClick  } ) => {
     const [vyrobek, setVyrobek] = useState(null);
 
-    useEffect (() => {
-        const oneProduct = async() => {
-            try {
-                const responseP = await fetch(`https://apps.kodim.cz/react-2/xxxmuck/products/${id}`);
-                const dataP = await responseP.json();
-                setVyrobek(dataP);
-            } catch (ex) {
-                console.log("Chyba pri nacitani jednoho produktu");
-            }
-        };
+    const onClickProduct = () => {
+        const detailId = idP;
+        setVyrobek(detailId);
+        onClick(detailId);
+//        <ProductPageDetail id={detailId} />
+//        console.log('KLik na detail:' + {vyrobek});
 
-        oneProduct();
-    }, [id]);
+    }
 
     return(
         <>
           {vyrobek===null ?
-            <div onClick={() => setVyrobek(idP)}>
-                <img src={obr} width="50%" height="50%" />
-                <div>{nazev}</div>
-                <div></div>
+            <div className="product" onClick={onClickProduct}>
+                <img className="product-image" src={obr} />
+                <div align="center">{nazev}</div>
             </div> :
             <div>
-                <img src={vyrobek.image} />
+                <img className="product-image" src={vyrobek.image}/>
                 <div align="center">{vyrobek.name}</div>
             </div>
 

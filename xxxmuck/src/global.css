@@ -6,10 +6,81 @@
 
 html {
   font-family: 'Open Sans', sans-serif;
+  background-color: white;
 }
 
 .container {
-  max-width: 26rem;
+  max-width: 90%;
+  align-content: center;
   margin-right: auto;
   margin-left: auto;
+  background-color: rgb(209, 210, 211);
+}
+
+h2 {
+  text-align: left;
+  padding-left: 20px;
+}
+
+.header {
+  margin-top: 0rem;
+  background-color: rgb(125, 194, 240);
+}
+
+.navigace {
+  padding: 20px;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  margin-top: 0rem;
+}
+
+.main-page {
+  background-color: blanchedalmond;
+
+}
+
+.list-of-products {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.list-of-products-akt {
+  columns: 3;
+  max-width: 90%;
+  margin: 5%;
+  padding: 10px;
+}
+
+.seznam-produktu {
+  background-color: azure;
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+
+}
+
+.product {
+  max-width: calc(25% - 20px);
+  min-width: calc(25% - 20px);
+  margin: 10px;
+  padding: 3px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.product-image {
+  max-width: 100%; /* Omezit maximální šířku obrázku na šířku kontejneru */
+  height: auto; /* Automaticky upravit výšku obrázku podle jeho šířky */
+  object-fit: cover; /* Obrázek bude přizpůsoben rozměrům kontejneru, aniž by se zkreslil */
+}
+
+.product-image:hover {
+  opacity: 1;
+  box-shadow: 0 0 10px black;
+  max-width: 100%; /* Omezit maximální šířku obrázku na šířku kontejneru */
+  height: auto; /* Automaticky upravit výšku obrázku podle jeho šířky */
+  object-fit: cover; /* Obrázek bude přizpůsoben rozměrům kontejneru, aniž by se zkreslil */
 }

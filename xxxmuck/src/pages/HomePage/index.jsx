@@ -1,12 +1,14 @@
 import { Link, Outlet } from 'react-router-dom';
-
-import './style.css';
+import { Title } from '../../components/Title';
 
 export const HomePage = () => {
   return (
     <div className="container">
-        <main>
-          <nav>
+        <div className='header'>
+          <Title title={'LUCIELIX'}/>
+        </div>
+        <main className='main-page'>
+          <nav className='navigace'>
             <Link to="/">Home</Link>
             <span> | </span>
             <Link to="/aktualni_nabidka" >Aktualni nabidka</Link> 

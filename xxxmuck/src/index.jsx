@@ -5,8 +5,8 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { ErrorPage } from './components/ErrorPage';
 import { News } from './components/News';
 import { ProductsList } from './components/ProductList';
-import { Title } from './components/Title';
 import { ProductPage } from './components/ProductPage';
+import { ProductPageDetail } from './components/ProductPageDetail';
 
 const router = createBrowserRouter([
   {
@@ -14,10 +14,6 @@ const router = createBrowserRouter([
     element: <HomePage />,
     errorElement : <ErrorPage />,
     children : [{
-                  path: '/',
-                  element: <Title title={"Nákupní galerie LUCIELIX"} />,
-                },
-                {
                   path: 'aktualni_nabidka',
                   element: <News />,
                 },
@@ -27,7 +23,7 @@ const router = createBrowserRouter([
                 },
                 {
                   path: 'products/:id',
-                  element: <ProductPage />,
+                  element: <ProductPageDetail />,
                 }]
     },
   ,
